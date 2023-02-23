@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class buku {
+            #id;
+            #title = "";
+            #price = 0;
+            #author;
+            #date;
+
+            //id
+            set id(ID){
+                this.#id = ID;
+            }
+
+            get id(){
+               return this.#id;
+            }
+
+            //title
+            set title(Title){
+                if(Title.length < 5 ){
+                    document.write(" *title tidak boleh kurang dari 5 huruf" + "<br>");
+                }            
+                this.#title = Title;
+            }
+            get title(){
+                return this.#title;
+            }
+
+            //price
+            set price(Price){
+                if(Price < 0){
+                    document.write(" *price tidak boleh min" + "<br>");
+                    return;
+                }
+                if(typeof Price !== 'number' ){
+                    document.write(" *price harus berupa angka!!" + "<br>");
+                    return;
+                }
+                this.#price = Price;
+            }
+            get price(){
+                return this.#price;
+            }
+
+            // author
+            set author(Author){
+                this.#author = Author;
+            } 
+            get author(){
+                return this.#author;
+            }
+
+            //date
+            set date (tanggal){
+                this.#date = tanggal;
+            }
+            get date(){
+                return this.#date;
+            }
+
+        }
+
+        var sell = new buku;
+        sell.id = 270706 ;
+        sell.title = "cinderella" ;
+        sell.price = "-2";
+        sell.author = "divia" ;
+        sell.date = 17 ;
+
+        document.write(`id : ${sell.id}<br>`);
+        document.write(`title : ${sell.title}<br>`);
+        document.write(`price : ${sell.price}<br>`);
+        document.write(`author : ${sell.author}<br>`);
+        document.write(`date : ${sell.date}<br>`);
+    </script>
+</body>
+</html>
